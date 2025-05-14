@@ -32,9 +32,9 @@
 <body class="font-[Poppins] px-6 py-8 space-y-10 dark-mode">
 
   <!-- Navbar -->
-  <header class="bg-gradient-to-r from-[#1a1f2e] to-[#121622] mx-auto mt-4 w-full md:w-[70%] shadow-lg rounded-full text-center">
+<header class="bg-gradient-to-r from-[#1a1f2e] to-[#121622] mx-auto mt-4 w-full md:w-[70%] shadow-lg text-center rounded-[20px]">
   <div class="container mx-auto px-4 py-4 flex justify-center items-center relative">
-    
+
     <!-- Toggle Button (Mobile Only) -->
     <button id="nav-toggle" class="absolute left-4 text-white text-2xl md:hidden focus:outline-none">
       <i class="fas fa-bars"></i>
@@ -54,7 +54,7 @@
   </div>
 
   <!-- Navigation Menu (Mobile) -->
-  <div id="mobile-menu" class="md:hidden hidden px-6 pb-4 text-left space-y-2 h-32">
+  <div id="mobile-menu" class="md:hidden w-full hidden px-6 pb-4 text-left space-y-2 py-6">
     <a href="#home" class="block text-white py-2 hover:underline">Home</a>
     <a href="#about" class="block text-white py-2 hover:underline">About</a>
     <a href="#experience" class="block text-white py-2 hover:underline">Experience</a>
@@ -206,13 +206,21 @@
       applyTheme(!isCurrentlyDark);
     });
 
-    // Navbar toggle
-    const navToggle = document.getElementById('nav-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
+    
 
-    navToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
+    // Navbar toggle
+    const toggleButton = document.getElementById("nav-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  toggleButton.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+
+    if (!mobileMenu.classList.contains("hidden")) {
+      mobileMenu.style.width = "90%"; 
+    } else {
+      mobileMenu.style.width = "100%";
+    }
+  });
 
     // Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
