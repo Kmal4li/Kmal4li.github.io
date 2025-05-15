@@ -54,7 +54,7 @@
   </div>
 
   <!-- Navigation Menu (Mobile) -->
-  <div id="mobile-menu" class="md:hidden w-full hidden px-6 pb-4 text-left space-y-2 py-6">
+  <div id="mobile-menu" class="md:hidden w-full hidden px-6 pb-4 text-left space-y-2 py-6 transition-all duration-500 ease-in-out">
     <a href="#home" class="block text-white py-2 hover:underline">Home</a>
     <a href="#about" class="block text-white py-2 hover:underline">About</a>
     <a href="#experience" class="block text-white py-2 hover:underline">Experience</a>
@@ -215,10 +215,13 @@
   toggleButton.addEventListener("click", () => {
     mobileMenu.classList.toggle("hidden");
 
+    // Menambahkan transisi yang smooth
     if (!mobileMenu.classList.contains("hidden")) {
-      mobileMenu.style.width = "90%"; 
+      mobileMenu.style.maxHeight = "500px"; 
+      mobileMenu.style.opacity = "5"; 
     } else {
-      mobileMenu.style.width = "100%";
+      mobileMenu.style.maxHeight = "0"; 
+      mobileMenu.style.opacity = "0"; 
     }
   });
 
