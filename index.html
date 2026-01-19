@@ -27,6 +27,20 @@
       color: var(--text-color);
       transition: background-color 0.3s, color 0.3s;
     }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .center {
+      grid-column: 1 / span 2;
+      justify-self: center;
+      width: 50%;
+    }
+
   </style>
 </head>
 <body class="font-[Poppins] px-6 py-8 space-y-10 dark-mode">
@@ -35,7 +49,7 @@
 <header class="bg-gradient-to-r from-[#1a1f2e] to-[#121622] mx-auto mt-4 w-full md:w-[70%] shadow-lg text-center rounded-[20px]">
   <div class="container mx-auto px-4 py-4 flex justify-center items-center relative">
 
-    <!-- Toggle Button (Mobile Only) -->
+    <!-- Toggle Button (Mobile) -->
     <button id="nav-toggle" class="absolute left-4 text-white text-2xl md:hidden focus:outline-none">
       <i class="fas fa-bars"></i>
     </button>
@@ -68,9 +82,9 @@
   <!-- About -->
   <section id="about" class="text-center space-y-6 animate-fade-in">
     <h1 class="text-4xl font-bold">Welcome to My Portfolio!</h1>
-    <img src="public/image/profile.JPG" alt="Profile" class="mx-auto w-40 h-40 object-cover rounded-full shadow-lg">
+    <img src="public/image/pasfoto.jpg" alt="Profile" class="mx-auto w-40 h-40 object-cover rounded-full shadow-lg">
     <h2 class="text-xl max-w-2xl mx-auto theme-text">
-      I'm <span class="text-green-400 font-semibold">Akmal Ali</span>, an undergraduate with enthusiast and passion for web development, especially frontend development. I also have a strong interest in UI/UX Design.
+      My name is<span class="text-green-400 font-semibold">Muhammad Akmal Ali</span>, an undergraduate with enthusiast and passion for web development, especially frontend development. I also have a strong interest in UI/UX Design and Game Development.
     </h2>
     <button class="bg-green-600 hover:bg-green-500 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition duration-300" onclick="window.open('public/image/CVAkmal.pdf')">
       View Resume
@@ -82,7 +96,7 @@
   <!-- Skills -->
   <section id="skills" class="max-w-5xl mx-auto">
     <h2 class="text-3xl font-bold mb-6 text-center">Skills</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="container">
       <div class="bg-[#2d2d2d] p-6 rounded-lg shadow hover:shadow-green-400 transition">
         <h3 class="text-green-400 font-semibold text-xl mb-3">UI/UX</h3>
         <ul class="space-y-2">
@@ -99,7 +113,7 @@
           <li class="bg-[#3a3a3a] text-gray-100 px-4 py-2 rounded">Laravel</li>
         </ul>
       </div>
-      <div class="bg-[#2d2d2d] p-6 rounded-lg shadow hover:shadow-green-400 transition">
+      <div class="card center bg-[#2d2d2d] p-6 rounded-lg shadow hover:shadow-green-400 transition">
         <h3 class="text-green-400 font-semibold text-xl mb-3">Database</h3>
         <ul class="space-y-2">
           <li class="bg-[#3a3a3a] text-gray-100 px-4 py-2 rounded">MySQL</li>
